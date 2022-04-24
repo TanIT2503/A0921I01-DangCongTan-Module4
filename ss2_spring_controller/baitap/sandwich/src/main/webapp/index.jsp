@@ -11,6 +11,17 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  <h2>Sandwich Condiments</h2>
+  <form action="/check">
+    <table>
+      <tr>
+        <td><input type="checkbox" name="condiment" value="Xà lách">Xà lách</td>
+        <td><input type="checkbox" name="condiment" value="Cà chua">Cà chua</td>
+        <td><input type="checkbox" name="condiment" value="Thị bò">Thị bò</td>
+        <td><input type="checkbox" name="condiment" value="Tương ớt">Tương ớt</td>
+      </tr>
+    </table>
+    <input type="submit" value="Save">
+  </form>
   </body>
 </html>

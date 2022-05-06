@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"><head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+        <html xmlns:th="http://www.thymeleaf.org">
+        <head>
+        <meta charset="UTF-8">
+        <title><title>Create new song</title>
+</head>
+<body>
+<h2>Update song</h2>
+<a th:href="@{/playlist/list}">Back to list</a>
+<form th:action="@{/playlist/update}" method="post" th:object="${song}">
+    <input type="hidden" th:field="*{id}">
+    <table border="1">
+        <tr>
+            <td>Name</td>
+            <td><input type="text" th:field="*{songName}"></td>
+        </tr>
+        <tr>
+            <td>Singer</td>
+            <td><input type="text" th:field="*{singer}"></td>
+        </tr>
+        <tr>
+            <td>Type</td>
+            <td><input type="text" th:field="*{type}"></td>
+        </tr>
+        <tr>
+            <td>Path</td>
+            <td><input type="text" th:field="*{path}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Update"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

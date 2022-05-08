@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" style="  background: #eceff1;">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body style="  background: #eceff1;">
+    <div th:replace="~{css/template.html::narbar}"></div>
+    <h1 style="margin: 30px"><b>Edit Blog</b></h1>
+    <div class="container p-2" style="border-radius: 30px; background: white; max-width: 90%;">
+        <form th:action="@{/blog/update}" method="post" th:object="${blog}" style="padding: 30px">
+            <input th:field="*{id}" hidden>
+            <div class="form-group">
+                <label for="title"><b>Title</b></label>
+                <input type="text" class="form-control" id="title" th:field="*{title}" placeholder="Title">
+            </div>
+            <div class="form-group">
+                <label for="content"><b>Content</b></label>
+                <textarea class="form-control" id="content" th:field="*{content}" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="author"><b>Author</b></label>
+                <input type="text" class="form-control" id="author" th:field="*{author}" placeholder="Author">
+            </div>
+            <div class="form-group">
+                <label for="tag"><b>Tag</b></label>
+                <input type="text" class="form-control" id="tag" th:field="*{tag}" placeholder="Tag">
+            </div>
+            <div class="form-group">
+                <label for="postDate"><b>PostDate</b></label>
+                <input type="date" class="form-control" id="postDate" th:field="*{postDate}" placeholder="Post Date">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <!-- <form th:action="@{/blog/update}" method="post" th:object="${blog}" >
+        <table border="1">
+            <input th:field="*{id}" hidden>
+            <tr>
+                <td>Blog Title</td>
+                <td><input th:field="*{title}" /></td>
+            </tr>
+            <tr>
+                <td>Content</td>
+                <td><textarea th:field="*{content}"></textarea></td>
+            </tr>
+            <tr>
+                <td>Author</td>
+                <td><input th:field="*{author}" /></td>
+            </tr>
+            <tr>
+                <td>Tag</td>
+                <td><input th:field="*{tag}" /></td>
+            </tr>
+            <tr>
+                <td>Post Date</td>
+                <td><input th:field="*{postDate}" /></td>
+            </tr>
+            <tr>
+                <td><input type="reset" value="Reset"></td>
+                <td><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

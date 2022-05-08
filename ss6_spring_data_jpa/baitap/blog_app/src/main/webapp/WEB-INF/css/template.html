@@ -1,0 +1,104 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" style="   background: #eceff1;">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Website Menu #3</title>
+
+  <style>
+    body {
+      background-color: #fbfbfb;
+    }
+
+    @media (min-width: 991.98px) {
+      main {
+        padding-left: 240px;
+      }
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      padding: 58px 0 0;
+      /* Height of navbar */
+      box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+      width: 240px;
+      z-index: 600;
+    }
+
+    @media (max-width: 991.98px) {
+      .sidebar {
+        width: 100%;
+      }
+    }
+
+    .sidebar .active {
+      border-radius: 5px;
+      box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    }
+
+    .sidebar-sticky {
+      position: relative;
+      top: 0;
+      height: calc(100vh - 48px);
+      padding-top: 0.5rem;
+      overflow-x: hidden;
+      overflow-y: auto;
+      /* Scrollable contents if viewport is shorter than content. */
+    }
+  </style>
+</head>
+
+<body>
+  <div th:fragment="narbar">
+    <nav class="navbar navbar-light bg-light" style="margin-bottom: 50px;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/blog/list"><b>Blog Của Tui</b></a>
+        <div class="container" style="width: 700px;">
+          <form class="d-flex input-group w-auto">
+            <input type="search" style="width:400px; border-radius: 6px; background: #eceff1" class="form-control"
+              placeholder="Function đang phát triển 🥲🥲" aria-label="Search" aria-describedby="search-addon" />
+            <span class="input-group-text border-0" id="search-addon" style="margin-left: 6px; background: #1f2937">
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10 2.5a7.5 7.5 0 0 1 5.964 12.048l4.743 4.745a1 1 0 0 1-1.32 1.497l-.094-.083-4.745-4.743A7.5 7.5 0 1 1 10 2.5Zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Z"
+                  fill="#ffffff" />
+              </svg>
+            </span>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+  </div>
+  <div th:fragment="sidebar">
+
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

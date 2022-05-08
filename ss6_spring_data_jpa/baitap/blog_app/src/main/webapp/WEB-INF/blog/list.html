@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" style="  background: #eceff1;">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body style="background: #eceff1">
+    <div th:replace="~{css/template.html::narbar}"></div>
+    <!--    <a th:href="@{/blog/create}">Create new blog</a>-->
+    <!--    <form th:action="@{/blog/list}" method="get">-->
+    <!--        <input type="text" name="nameBook" />-->
+    <!--        <input type="submit" value="Search" />-->
+    <!--    </form>-->
+    <h1 style="margin: 30px"><b>List Blog</b></h1>
+    <div class="container" style="border-radius: 30px; background: white; max-width: 90%;">
+        <button th:onclick="@{window.location.href='/blog/create'}"
+            style="color: #ffffff;background: #0c2445;border-radius: 8px;margin: 20px;width: 100px;height: 40px;">Create</button>
+        <table class="table" style="border-radius: 30px">
+            <tr>
+                <th>ID</th>
+                <th>Blog Title</th>
+                <th>content</th>
+                <th>Author</th>
+                <th>Tag</th>
+                <th>Post Day</th>
+                <th colspan="3" style="text-align:center;">Action</th>
+
+            </tr>
+            <tr th:each="b : ${blogs}" th:object="${b}">
+                <td th:text="${b.id}"></td>
+                <td th:text="${b.title}"></td>
+                <td th:text="${b.content}"></td>
+                <td th:text="${b.author}"></td>
+                <td th:text="${b.tag}"></td>
+                <td th:text="${b.postDate}"></td>
+                <td><a th:href="@{/blog/{id}/update/(id=*{id})}" style="text-decoration: none"><b>Update</b></a>
+                </td>
+                <td><a th:href="@{/blog/{id}/delete/(id=*{id})}" style="text-decoration: none"><b>Delete</b></a>
+                <td><a th:href="@{/blog/{id}/view/(id=*{id})}" style="text-decoration: none"><b>View</b></a>
+            </tr>
+        </table>
+    </div>
+
+    <div th:replace="~{template.html::footer}"></div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

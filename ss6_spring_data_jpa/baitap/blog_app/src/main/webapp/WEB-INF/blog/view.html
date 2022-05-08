@@ -8,16 +8,55 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<body>
+<body style="  background: #eceff1;">
     <div th:replace="~{css/template.html::narbar}"></div>
-    <div th:object="${blog}" style="background-color: khaki">
+    <div>
+        <h1 style="margin: 30px">
+            <b>View Blog</b>
+        </h1>
+        <button th:onclick="@{window.location.href='/blog/list'}"
+            style="color: #ffffff;background: #0c2445;border-radius: 8px;margin-left: 50px;margin-bottom: 20px;width: 50px;height: 30px;"><svg
+                width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M10.295 19.716a1 1 0 0 0 1.404-1.425l-5.37-5.29h13.67a1 1 0 1 0 0-2H6.336L11.7 5.714a1 1 0 0 0-1.404-1.424l-6.924 6.822a1.25 1.25 0 0 0 0 1.78l6.924 6.823Z"
+                    fill="#ffffff" />
+            </svg></button>
+    </div>
+    <div class="container p-2"
+        style="border-radius: 30px; background: white; max-width: 90%; justify-content: center; margin-bottom: 30px;">
+        <div th:object="${blog}">
+            <p th:text="*{id}" th:name="id" hidden></p>
+            <div style="padding: 40px; text-align: center;">
+                <b>
+                    <h3 th:text="*{title}" style="text-align: center;">
+                    </h3>
+                </b>
+            </div>
+            <div style="padding-left: 40px; padding-right: 40px; padding-bottom: 10px;">
+                Một tác giả nào đó: <h4 th:text="*{author}"></h4>
+            </div>
+            <div style="padding-left: 40px; padding-right: 40px">
+                <div
+                    style="padding-left: 40px; padding-right: 40px; background:#fcffea; border: 1px solid #c9c9c9; border-radius: 10px; ">
+                    <p th:text="*{content}"></p>
+                </div>
+            </div>
+            <div class="row"
+                style="justify-content: end; padding-left: 40px; padding-right: 40px; padding-bottom: 10px;">
+                <p th:text="*{postDate}"></p>
+            </div>
+        </div>
+    </div>
+    <div th:replace="~{css/template.html::footer}"></div>
+
+    <!-- <div th:object="${blog}" style="background-color: khaki">
         <p th:text="*{id}" th:name="id" hidden></p>
         <h5 th:text="*{title}"></h5>
         <p th:text="*{content}"></p>
         <p th:text="*{author}"></p>
         <p th:text="*{tag}"></p>
         <p th:text="*{postDate}"></p>
-    </div>
+    </div> -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

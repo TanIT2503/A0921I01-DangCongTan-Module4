@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="header">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/45128a02cf.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #eee
+        }
+
+        .nav-link {
+            border-radius: 35px !important;
+            transition: all 0.5s;
+            width: 100px;
+            display: flex;
+            flex-direction: column
+        }
+
+        .nav-link small {
+            font-size: 12px
+        }
+
+        .nav-link:hover {
+            background-color: #e1ff97 !important
+        }
+
+        .nav-link .fa {
+            transition: all 1s;
+            font-size: 20px
+        }
+
+        .nav-link:hover .fa {
+            background-color: #e1ff97;
+        }
+    </style>
+</head>
+
+<body>
+<nav class="navbar navbar-light " style="background: #f6fce3;" th:fragment="navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand">
+                <span class="input-group-text border-0 justify-content-center" id="search-addon"
+                      style="border: none; border-radius:10px; background: #dff27e; width: 90px; height: 45px">
+            <b>Library</b>
+            </span>
+        </a>
+        <div class="container d-flex justify-content-center" style="width: 85%;">
+            <form class=" input-group w-50">
+                <input type="search" class="form-control" placeholder="Search" aria-label="Search"
+                       aria-describedby="search-addon"
+                       style="border: none; border-radius: 30px; background: #eeffbf; height:45px" />
+                <span class="input-group-text border-0 ml-3 justify-content-center" id="search-addon"
+                      style="border: none; border-radius:8px; background: #dff27e; width: 45px" >
+                <i class="fas fa-search"></i>
+                </span>
+            </form>
+        </div>
+        <span class="input-group-text border-0 ml-3 justify-content-center" id="search-addon"
+              style="border: none; border-radius:8px; background: #dff27e; width: 45px; height: 45px" >
+        <i class="fa-brands fa-github"></i>
+        </span>
+    </div>
+</nav>
+<div class="d-flex flex-column flex-shrink-0 vh-100" style="width: 130px; background: #f6fce3">
+    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center" style="background: #f6fce3"
+        style="background: #f6fce3">
+        <li class="nav-item">
+            <button class="nav-link py-3" onclick="window.location.href='/category/list'"
+                    style="color: #ffffff;background: #d0f886; border-radius: 8px; margin: 20px; margin-top: 30px; margin-bottom: 30px;width: 80px; border: none"><i
+                    class="fad fa-books"></i></button>
+        </li>
+        <li> <a href="#" class="nav-link py-3 border-bottom"> <i class="fa-duotone fa-books"></i></i>
+            <small>Dashboard</small>
+        </a> </li>
+        <li> <a href="#" class="nav-link py-3 border-bottom"> <i class="fa fa-first-order"></i> <small>My
+            Orders</small>
+        </a> </li>
+        <li> <a href="#" class="nav-link py-3 border-bottom"> <i class="fa fa-cog"></i> <small>Settings</small> </a>
+        </li>
+        <li> <a href="#" class="nav-link py-3 border-bottom"> <i class="fa fa-bookmark"></i> <small>Bookmark</small>
+        </a> </li>
+    </ul>
+
+</div>
+</body>
+
+</html>

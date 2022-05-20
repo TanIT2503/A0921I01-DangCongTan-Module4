@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="main">
+    <div class="container">
+        <form th:action="@{/borrow}" method="post" th:object="${library}">
+            <table>
+                <input type="hidden" th:field="*{id}">
+                <tr>
+                    <td>Title</td>
+                    <td><input type="text" readonly th:field="*{title}"></td>
+                </tr>
+                <tr>
+                    <td>Author</td>
+                    <td><input type="text" readonly th:field="*{author}"></td>
+                </tr>
+                <tr>
+                    <td>Quantity</td>
+                    <td><input type="text" readonly th:field="*{quantity}"></td>
+                </tr>
+                <tr>
+                    <td>Year composed</td>
+                    <td><input type="text" th:field="*{year}"></td>
+                </tr>
+                <tr>
+                    <td>Code borrow</td>
+                    <td><input type="text" name="usedCode" th:value="${availableCode.codeBook}"></td>
+                </tr>
+                <tr>
+                    <td><button type="submit" th:disabled="${library.quantity == 0}">Borrow</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>

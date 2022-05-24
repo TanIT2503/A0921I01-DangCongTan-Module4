@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<body>
-<div class="main">
-    <div class="container">
+<th:block th:include="fragments/head"></th:block>
+<body style="background: #faf2c9">
+<th:block th:include="fragments/header"></th:block>
+<div class="row">
+    <th:block th:include="fragments/sidebar"></th:block>
+    <div class="main col-md-11 pt-3">
+        <div class="container p-2" style="border-radius: 30px; background: #f6fce3; max-width: 90%; margin-bottom: 30px;">
         <form th:action="@{/borrow}" method="post" th:object="${library}">
-            <table>
-                <input type="hidden" th:field="*{id}">
-                <tr>
-                    <td>Title</td>
-                    <td><input type="text" readonly th:field="*{title}"></td>
-                </tr>
-                <tr>
-                    <td>Author</td>
-                    <td><input type="text" readonly th:field="*{author}"></td>
-                </tr>
-                <tr>
-                    <td>Quantity</td>
-                    <td><input type="text" readonly th:field="*{quantity}"></td>
-                </tr>
-                <tr>
-                    <td>Year composed</td>
-                    <td><input type="text" th:field="*{year}"></td>
-                </tr>
-                <tr>
-                    <td>Code borrow</td>
-                    <td><input type="text" name="usedCode" th:value="${availableCode.codeBook}"></td>
-                </tr>
-                <tr>
-                    <td><button type="submit" th:disabled="${library.quantity == 0}">Borrow</button></td>
-                </tr>
-            </table>
+            <input type="hidden" th:field="*{id}">
+            <div class="form-group">
+                <label for="title"><b>Title</b></label>
+                <input type="text" class="form-control" id="title" readonly th:field="*{title}" placeholder="Title">
+            </div>
+            <div class="form-group">
+                <label for="author"><b>Author</b></label>
+                <input type="text" class="form-control" id="author" readonly th:field="*{author}" placeholder="author">
+            </div>
+            <div class="form-group">
+                <label for="Quantity"><b>Quantity</b></label>
+                <input type="text" class="form-control" id="Quantity" readonly th:field="*{quantity}" placeholder="Quantity">
+            </div>
+            <div class="form-group">
+                <label for="year"><b>Year compose</b></label>
+                <input type="text" class="form-control" id="year" readonly th:field="*{year}" placeholder="Year compose">
+            </div>
+            <div class="form-group">
+                <label for="code"><b>Code Borrow</b></label>
+                <input type="text" class="form-control" id="code" readonly th:value="${availableCode.codeBook}" placeholder="Code Borrow">
+            </div><button class="nav-link py-3 align-items-center" type="submit"
+                          style="color: #24260c;background: #d0f886; border-radius: 4px; margin: 20px; margin-top: 30px; margin-bottom: 30px;width: 200px; border: none">
+            <i class="fa-solid fa-plus"> Borrow Book</i></button>
         </form>
+    </div>
     </div>
 </div>
 </body>

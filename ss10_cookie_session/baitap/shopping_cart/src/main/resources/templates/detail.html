@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="fragments/head"></th:block>
+<body>
+<th:block th:include="fragments/navbar"></th:block>
+    <div class="row">
+        <th:block th:include="fragments/sidebar"></th:block>
+        <div class="col-md-11 pt-3">
+            <div class="container">
+                <div class="row">
+                    <div class="card col-md-4" style="width: 18rem; border-radius: 15px">
+                        <img th:src="@{${product.path}}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title" >Tên sản phẩm: <span th:text="${product.name}"></span> </h5>
+                            <hr>
+                            <p class="card-text" >Giá: <span th:text="${product.price}"></span></p>
+                            <hr>
+                            <a th:href="@{/add/{id}(id=${product.getId()})}" class="btn btn-primary" style="color: #24260c;background: #d0f886; border-radius: 8px;width: 150px; border: none">Add To Cart</a>
+                        </div>
+                    </div>
+                    <div class="detai col-md-8">
+                        <h4 th:text="${product.name}"></h4>
+                        <hr>
+                        <span th:text="${product.description}"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

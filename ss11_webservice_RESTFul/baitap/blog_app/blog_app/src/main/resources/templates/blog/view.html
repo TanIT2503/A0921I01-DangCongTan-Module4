@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" style="  background: #eceff1;">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+  <script th:src="@{/js/bootstrap.js}"></script>
+  <script th:src="@{/js/jquery-3.6.0.min.js}"></script>
+</head>
+
+<body style="  background: #eceff1;">
+<div>
+  <h1 style="margin: 30px">
+    <b>View Blog</b>
+  </h1>
+  <button th:onclick="@{window.location.href='/blog/list'}"
+          style="color: #ffffff;background: #0c2445;border-radius: 8px;margin-left: 50px;margin-bottom: 20px;width: 50px;height: 30px;"><svg
+          width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path
+            d="M10.295 19.716a1 1 0 0 0 1.404-1.425l-5.37-5.29h13.67a1 1 0 1 0 0-2H6.336L11.7 5.714a1 1 0 0 0-1.404-1.424l-6.924 6.822a1.25 1.25 0 0 0 0 1.78l6.924 6.823Z"
+            fill="#ffffff" />
+  </svg></button>
+</div>
+<div class="container p-2"
+     style="border-radius: 30px; background: white; max-width: 90%; justify-content: center; margin-bottom: 30px;">
+  <div th:object="${blog}">
+    <p th:text="*{id}" th:name="id" hidden></p>
+    <div style="padding: 40px; text-align: center;">
+      <b>
+        <h3 th:text="*{title}" style="text-align: center;">
+        </h3>
+      </b>
+    </div>
+    <div class="row">
+      <div style="padding-left: 40px; padding-right: 40px; padding-bottom: 10px;" class="col-md-6">
+        Một tác giả nào đó có tên là : <h4 th:text="*{author}"></h4>
+      </div>
+      <div style="padding-left: 40px; padding-right: 40px; padding-bottom: 10px; justify-content: end; align-items: end" class="col-md-6">
+        Blog có nội dung về : <h4 th:text="*{category.nameCategory}"></h4>
+      </div>
+    </div>
+
+    <div style="padding-left: 40px; padding-right: 40px">
+      <div
+              style="padding-left: 40px; padding-right: 40px; background:#fcffea; border: 1px solid #c9c9c9; border-radius: 10px; ">
+        <p th:text="*{content}"></p>
+      </div>
+    </div>
+    <div class="row"
+         style="justify-content: end; padding-left: 40px; padding-right: 40px; padding-bottom: 10px;">
+      <p th:text="*{postDate}"></p>
+    </div>
+  </div>
+</div>
+<!-- <div th:object="${blog}" style="background-color: khaki">
+	<p th:text="*{id}" th:name="id" hidden></p>
+	<h5 th:text="*{title}"></h5>
+	<p th:text="*{content}"></p>
+	<p th:text="*{author}"></p>
+	<p th:text="*{tag}"></p>
+	<p th:text="*{postDate}"></p>
+</div> -->
+
+</body>
+
+</html>

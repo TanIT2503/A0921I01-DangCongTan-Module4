@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" style="  background: #eceff1;">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+	<script th:src="@{/js/bootstrap.js}"></script>
+	<script th:src="@{/js/jquery-3.6.0.min.js}"></script>
+</head>
+
+<body style="  background: #eceff1;">
+<div>
+
+	<h1 style="margin: 30px">
+		<b>Delete Blog</b>
+	</h1>
+	<button th:onclick="@{window.location.href='/blog/list'}"
+	        style="color: #ffffff;background: #0c2445;border-radius: 8px;margin-left: 50px;margin-bottom: 20px;width: 50px;height: 30px;"><svg
+			width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+		<path
+				d="M10.295 19.716a1 1 0 0 0 1.404-1.425l-5.37-5.29h13.67a1 1 0 1 0 0-2H6.336L11.7 5.714a1 1 0 0 0-1.404-1.424l-6.924 6.822a1.25 1.25 0 0 0 0 1.78l6.924 6.823Z"
+				fill="#ffffff" />
+	</svg></button>
+</div>
+<div class="container p-2" style="border-radius: 30px; background: white; max-width: 90%; margin-bottom: 30px;">
+	<form th:action="@{/blog/delete}" method="post" th:object="${blog}" style="padding: 30px">
+		<input th:field="*{id}" hidden>
+		<div class="form-group">
+			<label for="title"><b>Title</b></label>
+			<input type="text" class="form-control" id="title" th:field="*{title}" placeholder="Title">
+		</div>
+		<div class="form-group">
+			<label for="content"><b>Content</b></label>
+			<textarea class="form-control" id="content" th:field="*{content}" rows="3"></textarea>
+		</div>
+		<div class="form-group">
+			<label for="author"><b>Author</b></label>
+			<input type="text" class="form-control" id="author" th:field="*{author}" placeholder="Author">
+		</div>
+		<div class="form-group">
+			<label for="tag"><b>Category: <label th:if="${blog.category != null}" th:text="${blog.category.nameCategory}"></label></b></label>
+
+		</div>
+		<div class="form-group">
+			<label for="postDate"><b>PostDate</b></label>
+			<input type="date" class="form-control" id="postDate" th:field="*{postDate}" placeholder="Post Date">
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>
+
+</body>
+
+</html>

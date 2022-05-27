@@ -59,7 +59,7 @@
         function getSmartphone(smartphone) {
             return `<tr><td >${smartphone.producer}</td><td >${smartphone.model}</td><td >${smartphone.price}</td>` +
                 `<td><a class="deleteSmartphone" href="${smartphone.id}">Delete</a></td>
-                 <td><a href="@{/smartphones/update/{id}(id=${smartphone.id})}">Edit</a></td></tr>`;
+                 <td><a th:href="@{/smartphones/update/{id}(id=${smartphone.id})}">Edit</a></td></tr>`;
         }
 
         $(document).ready(function () {
